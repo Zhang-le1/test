@@ -16,7 +16,7 @@ print_line2("-")
 
 
 def print_line3(char, times):
-    """需求4：定义一个函数能打印任意重复次数的分割线"""
+    """需求3：定义一个函数能打印任意重复次数的分割线"""
     print(char * times)
 
 
