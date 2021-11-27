@@ -14,10 +14,21 @@
         键必须是唯一的
         值可以取任何数据类型，但键只能使用字符串、数字或元组
 """
-XiaoMing = {"name": "小明",
-            "age": 18,
-            "gender": True,
-            "height": 1.75,
-            "weight": 75.5}
+XiaoMing_dict = {"name": "小明",
+                 "gender": True,
+                 "height": 1.75,
+                 "weight": 75.5}
 
-print(XiaoMing)
+# 1.取值(如果指定的 key 不存在，程序会报错)
+print(XiaoMing_dict["name"])
+
+# 2.增加/修改
+# 如果 key 不存在，会新增键值对
+XiaoMing_dict["age"] = 21
+# 如果键值对存在，会修改相应的键值对
+XiaoMing_dict["name"] = "小小明"
+
+# 3.删除
+XiaoMing_dict.pop("name")
+
+print(XiaoMing_dict)
