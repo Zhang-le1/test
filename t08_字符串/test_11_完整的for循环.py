@@ -6,9 +6,9 @@
         如果for循环通过 break 退出循环，不会执行else语句
 """
 
-for num in [1, 2, 3]:
-    print(num)
-    if num == 2:
+for gl_num in [1, 2, 3]:
+    print(gl_num)
+    if gl_num == 2:
         break
 else:
     print("会执行吗？")
