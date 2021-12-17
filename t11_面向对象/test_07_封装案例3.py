@@ -14,6 +14,15 @@
         3、枪能够发射子弹
         4、枪装填子弹————增加子弹数量
 """
+"""
+    身份运算符：用于比较两个对象的内存地址是否一致，是否是对同一个对象的引用
+    is          判断两个标识符是不是引用同一个对象，类似 id(a) == id(b)
+    is not      判断两个标识符是不是引用不同对象，类似 id(a) != id(b)
+    
+    is 与 == 的区别：
+        is 用于判断两个变量引用对象是否为同一个
+        == 用于判断引用变量的值是否相等
+"""
 
 
 # 创建枪类
@@ -47,14 +56,28 @@ class Soldier:
         # 在定义属性时，如果不知道设置什么初始值，可以设置为None
         self.gun = None
 
+    def fire(self):
+        # 1、判断士兵是否有枪
+        # 对None进行比判断时，使用 is
+        if self.gun is None:
+            print("[%s] 还没有枪" % self.name)
+            return
+        # 2、高喊口号
+        print("冲啊...[%s]" % self.name)
+        # 3、让枪装填子弹
+        self.gun.add_bullet(5)
+        # 4、让枪发射子弹
+        self.gun.shoot()
+
 
 # 1、创建枪对象
 ak47 = Gun("AK47")
-ak47.add_bullet(4)
-ak47.shoot()
+# ak47.add_bullet(4)
+# ak47.shoot()
 
 # 2、创建许三多
 xusanduo = Soldier("许三多")
 xusanduo.gun = ak47
+xusanduo.fire()
 
 print(xusanduo.gun)
